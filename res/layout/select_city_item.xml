@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/group_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:gravity="left|center"
+        android:paddingBottom="5.0dip"
+        android:paddingLeft="@dimen/selectcity_group_item_padding"
+        android:paddingRight="@dimen/selectcity_group_item_padding"
+        android:paddingTop="5.0dip"
+        android:text="S"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40.0dip"
+        android:paddingLeft="@dimen/selectcity_group_item_padding"
+        android:text="深圳"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+</LinearLayout>

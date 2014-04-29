@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.example.pinnedheaderlistviewdemo.view.PinnedHeaderListView
+        android:id="@+id/mListView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false" />
+
+    <com.example.pinnedheaderlistviewdemo.view.BladeView
+        android:id="@+id/mLetterListView"
+        android:layout_width="30dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="#00000000" />
+
+</RelativeLayout>

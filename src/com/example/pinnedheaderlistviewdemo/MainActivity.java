@@ -1,20 +1,11 @@
 package com.example.pinnedheaderlistviewdemo;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -25,6 +16,11 @@ import com.example.pinnedheaderlistviewdemo.view.BladeView;
 import com.example.pinnedheaderlistviewdemo.view.BladeView.OnItemClickListener;
 import com.example.pinnedheaderlistviewdemo.view.PinnedHeaderListView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.*;
+
 public class MainActivity extends Activity {
 
     private static final int COPY_DB_SUCCESS = 10;
@@ -32,7 +28,24 @@ public class MainActivity extends Activity {
     protected static final int QUERY_CITY_FINISH = 12;
     private MySectionIndexer mIndexer;
 
-    private List<City> cityList = new ArrayList<City>();
+    private List<City> mCityList = new ArrayList<City>();
+
+
+    private DBHelper helper;
+
+    private CityListAdapter mAdapter;
+    public static final String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTUVWXYZ";
+    protected static final String TAG = null;
+
+    private static final String TAG_= "MainActivity" ;
+
+    private String[] sections = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
+            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+            "Y", "Z"};
+    private int[] counts;
+    private PinnedHeaderListView mListView;
+
+
     public static String APP_DIR = Environment.getExternalStorageDirectory().getAbsolutePath() + "/test/";
     private Handler handler = new Handler() {
 
@@ -44,7 +57,7 @@ public class MainActivity extends Activity {
 
                         mIndexer = new MySectionIndexer(sections, counts);
 
-                        mAdapter = new CityListAdapter(cityList, mIndexer, getApplicationContext());
+                        mAdapter = new CityListAdapter(mCityList, mIndexer, getApplicationContext());
                         mListView.setAdapter(mAdapter);
 
                         mListView.setOnScrollListener(mAdapter);
@@ -69,23 +82,15 @@ public class MainActivity extends Activity {
 
         ;
     };
-    private DBHelper helper;
 
-    private CityListAdapter mAdapter;
-    private static final String ALL_CHARACTER = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    protected static final String TAG = null;
-
-    private String[] sections = {"#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-            "Y", "Z"};
-    private int[] counts;
-    private PinnedHeaderListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Log.d(TAG_,"MainActivity onCreate") ;
         helper = new DBHelper();
 
         copyDBFile();
@@ -97,6 +102,7 @@ public class MainActivity extends Activity {
         File file = new File(APP_DIR + "/city.db");
         if (file.exists()) {
             requestData();
+            Log.w(TAG_,"") ;
 
         } else {    //拷贝文件
             Runnable task = new Runnable() {
@@ -158,14 +164,28 @@ public class MainActivity extends Activity {
                 CityDao dao = new CityDao(helper);
 
                 List<City> hot = dao.getHotCities();    //热门城市
+
+
                 List<City> all = dao.getAllCities();    //全部城市
+                //debug
+                //:
+                if (all == null) {
+                    Log.wtf(TAG_,"HOT 为空 shit");
+                }
+                Iterator<City> iterator = all.iterator() ;
+                int count = 0 ;
+                while (iterator.hasNext()) {
+                    City city = iterator.next() ;
+                    Log.d(TAG_,"第" + ++count + "个" + city.toString()) ;
+                }
+                //~
 
                 if (all != null) {
 
                     Collections.sort(all, new MyComparator());    //排序
 
-                    cityList.addAll(hot);
-                    cityList.addAll(all);
+                    mCityList.addAll(hot);
+                    mCityList.addAll(all);
 
                     //初始化每个字母有多少个item
                     counts = new int[sections.length];
@@ -173,7 +193,7 @@ public class MainActivity extends Activity {
                     counts[0] = hot.size();    //热门城市 个数
 
                     for (City city : all) {    //计算全部城市
-
+                        //Note  城市缩写的第一个字母
                         String firstCharacter = city.getSortKey();
                         int index = ALL_CHARACTER.indexOf(firstCharacter);
                         counts[index]++;
@@ -212,7 +232,9 @@ public class MainActivity extends Activity {
 
                     int position = mIndexer.getPositionForSection(section);
 
-                    Log.i(TAG, "s:" + s + ",section:" + section + ",position:" + position);
+                    Log.d(TAG_,s + "'s position：" + position) ;
+
+                    Log.i(TAG_, "s:" + s + ",section:" + section + ",position:" + position);
 
                     if (position != -1) {
                         mListView.setSelection(position);
@@ -227,7 +249,7 @@ public class MainActivity extends Activity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),cityList.get(position).getName(),100).show();
+                Toast.makeText(getApplicationContext(), mCityList.get(position).getName(),100).show();
             }
         });
     }

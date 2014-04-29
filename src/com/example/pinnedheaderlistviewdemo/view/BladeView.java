@@ -6,18 +6,23 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import com.example.pinnedheaderlistviewdemo.MainActivity;
 import com.example.pinnedheaderlistviewdemo.R;
 
-import static com.example.pinnedheaderlistviewdemo.R.color.lvye_green;
-
+        /**
+         * 竖向选择器   字母索引
+         */
 public class BladeView extends View {
+    private static final String TAG ="BladeView" ;
+
     private OnItemClickListener mOnItemClickListener;
-    String[] b = {"#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+    String[] b = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
             "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
             "Y", "Z"};
     int choose = -1;
@@ -50,6 +55,7 @@ public class BladeView extends View {
         int width = getWidth();
         int singleHeight = height / b.length;
         for (int i = 0; i < b.length; i++) {
+            //竖向选择器  的颜色
             paint.setColor(Color.parseColor("#ff2f2f2f"));
 //			paint.setTypeface(Typeface.DEFAULT_BOLD);	//加粗
             paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.bladeview_fontsize));//设置字体的大小
@@ -71,25 +77,26 @@ public class BladeView extends View {
         final int action = event.getAction();
         final float y = event.getY();
         final int oldChoose = choose;
-        final int c = (int) (y / getHeight() * b.length);
+        //用户点击选中的字母
+        final int choiceLetter = (int) (y / getHeight() * b.length);
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                showBkg = true;
-                if (oldChoose != c) {
-                    if (c >= 0 && c < b.length) {    //让第一个字母响应点击事件
-                        performItemClicked(c);
-                        choose = c;
+//                showBkg = true;
+                if (oldChoose != choiceLetter) {
+                    if (choiceLetter >= 0 && choiceLetter < b.length) {    //让第一个字母响应点击事件
+                        performItemClicked(choiceLetter);
+                        choose = choiceLetter;
                         invalidate();
                     }
                 }
 
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (oldChoose != c) {
-                    if (c >= 0 && c < b.length) {    //让第一个字母响应点击事件
-                        performItemClicked(c);
-                        choose = c;
+                if (oldChoose != choiceLetter) {
+                    if (choiceLetter >= 0 && choiceLetter < b.length) {    //让第一个字母响应点击事件
+                        performItemClicked(choiceLetter);
+                        choose = choiceLetter;
                         invalidate();
                     }
                 }
@@ -104,6 +111,10 @@ public class BladeView extends View {
         return true;
     }
 
+    /**
+     * 弹出显示   字母索引
+     * @param item
+     */
     private void showPopup(int item) {
         if (mPopupWindow == null) {
 
@@ -122,9 +133,10 @@ public class BladeView extends View {
 
         String text = "";
         if (item == 0) {
-            text = "#";
+            text = "当前";
         } else {
-            text = Character.toString((char) ('A' + item - 1));
+            text = MainActivity.ALL_CHARACTER.substring(item, item + 1) ;
+//            text = Character.toString((char) ('A' + item - 1));
         }
         mPopupText.setText(text);
         if (mPopupWindow.isShowing()) {
@@ -160,6 +172,7 @@ public class BladeView extends View {
 
     private void performItemClicked(int item) {
         if (mOnItemClickListener != null) {
+            Log.d(TAG,"item :" + item + "对应的字母为" + b[item]) ;
             mOnItemClickListener.onItemClick(b[item]);
             showPopup(item);
         }

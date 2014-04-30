@@ -34,13 +34,13 @@ public class MainActivity extends Activity {
     private DBHelper helper;
 
     private CityListAdapter mAdapter;
-    public static final String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTUVWXYZ";
+    public static final String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTWXYZ";
     protected static final String TAG = null;
 
     private static final String TAG_= "MainActivity" ;
 
     private String[] sections = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
-            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+            "L", "M", "N", "O", "P", "Q", "R", "S", "T","W", "X",
             "Y", "Z"};
     private int[] counts;
     private PinnedHeaderListView mListView;
@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         Log.d(TAG_,"MainActivity onCreate") ;
@@ -155,7 +156,12 @@ public class MainActivity extends Activity {
         }
     }
 
+    /**
+     * 从数据库中请求数据
+     */
     private void requestData() {
+
+        Log.d(TAG_,"执行了requestData") ;
 
         Runnable task = new Runnable() {
 
@@ -163,22 +169,15 @@ public class MainActivity extends Activity {
             public void run() {
                 CityDao dao = new CityDao(helper);
 
-                List<City> hot = dao.getHotCities();    //热门城市
+                List<City> hot = null;    //热门城市
+                List<City> all = null;    //全部城市
+                try {
+                    hot = dao.getHotCities();
+                    all = dao.getAllCities();
 
-
-                List<City> all = dao.getAllCities();    //全部城市
-                //debug
-                //:
-                if (all == null) {
-                    Log.wtf(TAG_,"HOT 为空 shit");
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                Iterator<City> iterator = all.iterator() ;
-                int count = 0 ;
-                while (iterator.hasNext()) {
-                    City city = iterator.next() ;
-                    Log.d(TAG_,"第" + ++count + "个" + city.toString()) ;
-                }
-                //~
 
                 if (all != null) {
 
@@ -192,12 +191,16 @@ public class MainActivity extends Activity {
 
                     counts[0] = hot.size();    //热门城市 个数
 
+                    TreeSet<String> cityFirstCharOfAbbreviation = new TreeSet<String>() ;
+
                     for (City city : all) {    //计算全部城市
                         //Note  城市缩写的第一个字母
                         String firstCharacter = city.getSortKey();
+                        cityFirstCharOfAbbreviation.add(firstCharacter) ;
                         int index = ALL_CHARACTER.indexOf(firstCharacter);
                         counts[index]++;
                     }
+                    Log.w(TAG_,"所有城市缩写的第一个字母" + cityFirstCharOfAbbreviation.toString()) ;
 
                     handler.sendEmptyMessage(QUERY_CITY_FINISH);
                 }
@@ -227,12 +230,15 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(String s) {
                 if (s != null) {
+                    if (s.equalsIgnoreCase("当前")) {
+                        mListView.setSelection(0);
+                        return;
+                    }
 
                     int section = ALL_CHARACTER.indexOf(s);
 
                     int position = mIndexer.getPositionForSection(section);
 
-                    Log.d(TAG_,s + "'s position：" + position) ;
 
                     Log.i(TAG_, "s:" + s + ",section:" + section + ",position:" + position);
 

@@ -1,10 +1,9 @@
 package com.example.pinnedheaderlistviewdemo;
 
-import java.util.Arrays;
-
 import android.util.Log;
-import android.widget.AlphabetIndexer;
 import android.widget.SectionIndexer;
+
+import java.util.Arrays;
 
 public class MySectionIndexer implements SectionIndexer {
     private final String[] mSections;//
@@ -43,7 +42,6 @@ public class MySectionIndexer implements SectionIndexer {
 
     @Override
     public Object[] getSections() {
-        // TODO Auto-generated method stub
         return mSections;
     }
 

@@ -23,7 +23,7 @@ public class BladeView extends View {
 
     private OnItemClickListener mOnItemClickListener;
     String[] b = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
-            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X",
             "Y", "Z"};
     int choose = -1;
     Paint paint = new Paint();
@@ -55,14 +55,16 @@ public class BladeView extends View {
         int width = getWidth();
         int singleHeight = height / b.length;
         for (int i = 0; i < b.length; i++) {
-            //竖向选择器  的颜色
+            //竖向选择器中字母默认显示的颜色
             paint.setColor(Color.parseColor("#ff2f2f2f"));
 //			paint.setTypeface(Typeface.DEFAULT_BOLD);	//加粗
             paint.setTextSize(getResources().getDimensionPixelSize(R.dimen.bladeview_fontsize));//设置字体的大小
             paint.setFakeBoldText(true);
             paint.setAntiAlias(true);
             if (i == choose) {
-                paint.setColor(Color.parseColor("#3399ff"));
+                //竖向选择器中  被选中字母的颜色
+                paint.setColor(Color.parseColor("#ff0000"));
+//                paint.setColor(Color.parseColor("#3399ff"));
             }
             float xPos = width / 2 - paint.measureText(b[i]) / 2;
             float yPos = singleHeight * i + singleHeight;
@@ -82,6 +84,7 @@ public class BladeView extends View {
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                //如果此处设置为true，意为当竖向选择器被点击(包括滑动状态)时，显示背景颜色
 //                showBkg = true;
                 if (oldChoose != choiceLetter) {
                     if (choiceLetter >= 0 && choiceLetter < b.length) {    //让第一个字母响应点击事件
@@ -97,6 +100,13 @@ public class BladeView extends View {
                     if (choiceLetter >= 0 && choiceLetter < b.length) {    //让第一个字母响应点击事件
                         performItemClicked(choiceLetter);
                         choose = choiceLetter;
+                        /*
+                        invalidate:
+                         Invalidate[ɪn'vælɪdeɪt] the whole view. If the view is visible,
+                         onDraw(android.graphics.Canvas) will be called at some point in
+                         the future. This must be called from a UI thread. To call from a non-UI thread,
+                         call postInvalidate().
+                         */
                         invalidate();
                     }
                 }

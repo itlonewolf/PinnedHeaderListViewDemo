@@ -29,6 +29,8 @@ public class CityDao implements DBHelper.TableData {
     private static List<City> mAllCities; //全部城市
     private static TreeSet<String> mFirstCharFromAbbreviationOfCity;  //所有城市缩写的首字母
 
+    private static int mPreCharNum;//当前 热门等选项的个数
+
 
 
     public CityDao(DBHelper helper) {
@@ -241,6 +243,7 @@ public class CityDao implements DBHelper.TableData {
      * </p>
      */
     public String[] sectionsAndBlade(String... presentLocation){
+        mPreCharNum = presentLocation.length ;
         String [] sectionsAndBlade ;
         sectionsAndBlade = ArrayUtils.addAll(
                 presentLocation,
@@ -252,6 +255,14 @@ public class CityDao implements DBHelper.TableData {
     }
     // public static final String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTWXYZ";
     public String allCharacter(){
+        StringBuilder stringBuilder = new StringBuilder() ;
+        for (int i = 0; i < mPreCharNum; i++) {
+            stringBuilder.append("#") ;
+        }
+        for (String s : mFirstCharFromAbbreviationOfCity) {
+            stringBuilder.append(s) ;
+        }
+        return  stringBuilder.toString() ;
 
     }
 }

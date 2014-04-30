@@ -27,7 +27,7 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="CityDao" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="MainActivity" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.pinnedheaderlistviewdemo" />
   </component>
@@ -95,16 +95,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CityDao.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CityDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/db/CityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54767185" vertical-offset="0" max-vertical-offset="3146">
-              <caret line="28" column="40" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2478" max-vertical-offset="3432">
+              <caret line="256" column="30" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="30" />
               <folding>
                 <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-                <element signature="e#2664#2754#0" expanded="false" />
+                <element signature="e#2714#2804#0" expanded="false" />
                 <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-                <element signature="e#5138#5228#0" expanded="false" />
+                <element signature="e#5188#5278#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,25 +123,25 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5980">
-              <caret line="36" column="73" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="73" />
+            <state vertical-scroll-proportion="-13.2" vertical-offset="1450" max-vertical-offset="6136">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BladeView.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BladeView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/view/BladeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4628">
-              <caret line="26" column="22" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.74161077" vertical-offset="468" max-vertical-offset="4732">
+              <caret line="56" column="45" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="45" />
               <folding>
-                <element signature="e#5571#5572#0" expanded="true" />
-                <element signature="e#5628#5629#0" expanded="true" />
-                <element signature="e#5936#5937#0" expanded="true" />
-                <element signature="e#5984#5985#0" expanded="true" />
-                <element signature="e#6056#6057#0" expanded="true" />
-                <element signature="e#6103#6104#0" expanded="true" />
+                <element signature="e#5832#5833#0" expanded="true" />
+                <element signature="e#5889#5890#0" expanded="true" />
+                <element signature="e#6197#6198#0" expanded="true" />
+                <element signature="e#6245#6246#0" expanded="true" />
+                <element signature="e#6317#6318#0" expanded="true" />
+                <element signature="e#6364#6365#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,9 +174,9 @@
         <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/db/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/City.java" />
         <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MySectionIndexer.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/view/BladeView.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/db/CityDao.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/view/BladeView.java" />
       </list>
     </option>
   </component>
@@ -499,7 +499,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-5" width="1922" height="1085" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -514,7 +514,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32832617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32832617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -567,12 +567,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1764" max-vertical-offset="3874">
           <caret line="104" column="35" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="35" />
           <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,9 +591,9 @@
           <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
           <folding>
             <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#2664#2754#0" expanded="false" />
+            <element signature="e#2714#2804#0" expanded="false" />
             <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#5138#5228#0" expanded="false" />
+            <element signature="e#5188#5278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -649,12 +649,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4342" max-vertical-offset="4628">
           <caret line="167" column="40" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
           <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -673,9 +673,9 @@
           <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
           <folding>
             <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#2664#2754#0" expanded="false" />
+            <element signature="e#2714#2804#0" expanded="false" />
             <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#5138#5228#0" expanded="false" />
+            <element signature="e#5188#5278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,12 +731,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4342" max-vertical-offset="4628">
           <caret line="167" column="40" selection-start-line="167" selection-start-column="40" selection-end-line="167" selection-end-column="40" />
           <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,9 +755,9 @@
           <caret line="19" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#2664#2754#0" expanded="false" />
+            <element signature="e#2714#2804#0" expanded="false" />
             <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#5138#5228#0" expanded="false" />
+            <element signature="e#5188#5278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -797,12 +797,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="161" max-vertical-offset="3933">
           <caret line="7" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,9 +821,9 @@
           <caret line="11" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#2664#2754#0" expanded="false" />
+            <element signature="e#2714#2804#0" expanded="false" />
             <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#5138#5228#0" expanded="false" />
+            <element signature="e#5188#5278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,12 +833,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="4071">
           <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1002,21 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/view/BladeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4628">
-          <caret line="26" column="22" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#5571#5572#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5936#5937#0" expanded="true" />
-            <element signature="e#5984#5985#0" expanded="true" />
-            <element signature="e#6056#6057#0" expanded="true" />
-            <element signature="e#6103#6104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MySectionIndexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1002" max-vertical-offset="1872">
@@ -1025,23 +1010,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/db/CityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2478" max-vertical-offset="3432">
+          <caret line="256" column="30" selection-start-line="256" selection-start-column="18" selection-end-line="256" selection-end-column="30" />
+          <folding>
+            <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
+            <element signature="e#2714#2804#0" expanded="false" />
+            <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
+            <element signature="e#5188#5278#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5980">
-          <caret line="36" column="73" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="73" />
+        <state vertical-scroll-proportion="-13.2" vertical-offset="1450" max-vertical-offset="6136">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/db/CityDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pinnedheaderlistviewdemo/view/BladeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54767185" vertical-offset="0" max-vertical-offset="3146">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.74161077" vertical-offset="468" max-vertical-offset="4732">
+          <caret line="56" column="45" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="45" />
           <folding>
-            <element signature="method#getHotCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#2664#2754#0" expanded="false" />
-            <element signature="method#getAllCitiesFromDB#0;class#CityDao#0" expanded="false" />
-            <element signature="e#5138#5228#0" expanded="false" />
+            <element signature="e#5832#5833#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#6197#6198#0" expanded="true" />
+            <element signature="e#6245#6246#0" expanded="true" />
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
           </folding>
         </state>
       </provider>

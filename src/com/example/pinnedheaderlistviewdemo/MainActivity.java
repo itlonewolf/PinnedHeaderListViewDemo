@@ -31,17 +31,20 @@ public class MainActivity extends Activity {
     private List<City> mCityList = new ArrayList<City>();
 
 
-    private DBHelper helper;
+    private DBHelper mHelper;
+    private CityDao mDao;
 
     private CityListAdapter mAdapter;
-    public static final String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTWXYZ";
+    public static String ALL_CHARACTER ;
+//    public static String ALL_CHARACTER = "#ABCDFGHJKLMNOPQRSTWXYZ";
     protected static final String TAG = null;
 
     private static final String TAG_= "MainActivity" ;
 
-    private String[] sections = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
-            "L", "M", "N", "O", "P", "Q", "R", "S", "T","W", "X",
-            "Y", "Z"};
+    private String[] sections ;
+//    private String[] sections = {"当前", "A", "B", "C", "D", "F", "G", "H", "J", "K",
+//            "L", "M", "N", "O", "P", "Q", "R", "S", "T","W", "X",
+//            "Y", "Z"};
     private int[] counts;
     private PinnedHeaderListView mListView;
 
@@ -89,14 +92,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         Log.d(TAG_,"MainActivity onCreate") ;
-        helper = new DBHelper();
-
+        mHelper = new DBHelper();
+        mDao = new CityDao(mHelper);
+        init();
         copyDBFile();
         findView();
     }
+
+    private void init(){
+        sections = mDao.sectionsAndBlade("当前") ;
+        ALL_CHARACTER = mDao.allCharacter() ;
+    }
+
 
     private void copyDBFile() {
 
@@ -167,13 +175,11 @@ public class MainActivity extends Activity {
 
             @Override
             public void run() {
-                CityDao dao = new CityDao(helper);
-
                 List<City> hot = null;    //热门城市
                 List<City> all = null;    //全部城市
                 try {
-                    hot = dao.getHotCities();
-                    all = dao.getAllCities();
+                    hot = mDao.getHotCities();
+                    all = mDao.getAllCities();
 
                 } catch (Exception e) {
                     e.printStackTrace();
